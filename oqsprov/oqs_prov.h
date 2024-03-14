@@ -47,6 +47,7 @@
 #define OQSPROV_R_WRONG_PARAMETERS    13
 #define OQSPROV_R_VERIFY_ERROR        14
 #define OQSPROV_R_EVPINFO_MISSING     15
+#define OQSPROV_R_INTERNAL_ERROR      16
 
 /* Extras for OQS extension */
 
