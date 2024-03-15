@@ -145,7 +145,10 @@ jobs:
           done
 
       - name: Run tests
-        run: ctest --test-dir build --output-on-failure
+        run: |
+          export OPENSSL_MODULES=/__w/oqs-provider/oqs-provider/build/lib
+          /__w/oqs-provider/oqs-provider/build/test/oqs_test_evp_pkey_params "oqsprovider" "/__w/oqs-provider/oqs-provider/test/openssl-ca.cnf"
+          ctest --test-dir build --output-on-failure --extra-verbose -j1
 
   linux_aarch64:
     name: "aarch64 cross-compilation"
