@@ -212,7 +212,7 @@ jobs:
           - arch: win64
             oqsconfig: -DOQS_ALGS_ENABLED=STD
             osslconfig: no-shared no-fips VC-WIN64A
-        toolchain: 
+        toolchain:
         - .CMake/toolchain_windows_amd64.cmake
         msarch:
           - x64
@@ -261,7 +261,7 @@ jobs:
           run: |
             cmake --version
             cmake -B build --toolchain ${{ matrix.toolchain }} .
-            cmake --build build 
+            cmake --build build
             cmake --build build --target INSTALL
           working-directory: liboqs
         - name: prepare the OpenSSL build directory
@@ -305,4 +305,4 @@ jobs:
           with:
             name: oqs-provider-msvc
             path: D:/a/oqs-provider/oqs-provider/_build/lib/oqsprovider.dll
-          
+
