@@ -5,10 +5,10 @@ on:
     branches: [ '*' ]
   pull_request:
     branches: [ "main" ]
-    
-jobs:
 
+jobs:
   standalone_macos_intel:
+    needs: [check_clang_format]
     runs-on: macos-13
     strategy:
       fail-fast: false
@@ -28,6 +28,7 @@ jobs:
             fi'
 
   standalone_linux_intel:
+    needs: [check_clang_format]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
