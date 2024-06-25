@@ -80,6 +80,10 @@ jobs:
         with:
           name: oqsprovider-x64
           path: _build/*.deb
+      - name: Verify that the static library is copied to the install directory.
+        run: |
+          OPENSSL_BRANCH=${{ matrix.ossl-branch }} OQSPROV_CMAKE_PARAMS="-DOQS_PROVIDER_BUILD_STATIC=ON" ./scripts/fullbuild.sh && \
+          stat _build/lib/liboqsprovider.a
 
   asan_linux_intel:
     name: "Security checks"
