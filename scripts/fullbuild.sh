@@ -124,6 +124,7 @@ if [ ! -f "_build/lib/oqsprovider.$SHLIBEXT" ]; then
    #BUILD_TYPE="-DCMAKE_BUILD_TYPE=Debug"
    BUILD_TYPE=""
    # for omitting public key in private keys add -DNOPUBKEY_IN_PRIVKEY=ON
+   set -x
    if [ -z "$OPENSSL_INSTALL" ]; then
        cmake $CMAKE_OPENSSL_LOCATION $BUILD_TYPE $OQSPROV_CMAKE_PARAMS -S . -B _build && cmake --build _build
    else
